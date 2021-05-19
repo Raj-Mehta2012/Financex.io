@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Financex - Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="https://image.ibb.co/fOur3b/favicon.png"/>
+<meta name="theme-color" content="#3a9fff"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="https://image.ibb.co/fOur3b/favicon.png"/>
+<meta name="theme-color" content="#1885ed">
+  <title>Financex - Homepage</title>
+</head>
+
+<body>
+<header class="header">
+  <div class="container header__container">
+<div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png"> <h1 class="header__title">Financex<span class="header__light">.io</span></h1></div> 
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+  
+  <div class="header__menu">
+    <nav id="navbar" class="header__nav collapse">
+      <ul class="header__elenco">
+        <li class="header__el"><a href="#" class="header__link">Home</a></li>
+        <li class="header__el"><a href="#" class="header__link">Contact us</a></li>
+        <li class="header__el header__el--blue"><a href="" class="btn btn--white">Sign In →</a></li>
+      </ul>
+    </nav>
+  </div>
+    </div>
+</header>
+
+<div class="sect sect--padding-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+    <div class="site">
+      <h1 class="site__title">Wanna figure out the next big thing?</h1>
+      <h2 class="site__subtitle">Manage finances like a boss</h2>
+      <div class="site__box-link">
+        <a class="btn btn--width" href="#stock_area">Get Started</a>
+        <a class="btn btn--revert btn--width" href="">Contact</a>
+      </div>
+      <img class="site__img" src="https://image.ibb.co/c7grYb/image3015.png">
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+<!-- Next Section -->
+
+<div class="sect sect--padding-bottom" id="stock_area">
+  <div class="container">
+    <div class="row">
+     <h1 class="row__title">
+    FIND A STOCK AND BUILD A FORTUNE </h1>
+    </div>
+    <div class="row row--margin">
+      <div class="col-md-6">
+        <div class="col-md-12">
+        <form id="contact" class="form">
+          <div class="form-group" style="vertical-align: center">
+            <textarea type="text" id="stock_name" placeholder="Enter the STOCK SYMBOL (not the stock name). For instance, AAPL for Apple" class="form__field form__textarea stock_name"></textarea>
+            <button class="btn btn--up btn--width" id="stock_prediction_button" onclick="getFormInfo()">Predict</button>
+            <button class="btn btn--up1 btn--width" id="stock_info_button" onclick="getStockInfo()">Current Price</button>
+            <button class="btn btn--up2 btn--width" id="stock_detinfo_button" onclick="getStockDetInfo()">Detailed Info</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-12">
+        <br>
+        <br>
+      </div>
+      <div class="col-md-12">
+
+        <div class="col-md-12">
+
+          <table class="styled-table temp_class" id="table_id1">
+            <thead>
+                <tr>
+                    <th>Stock</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+
+        </div>
+      </div>
+
+
+      </div>
+      <div class="col-md-1">   </div>
+      <div class="col-md-5">
+
+        <!------------------- ADD TO PORTFOLIO------------------------->
+        <div class="col-md-12">
+          <div class="col-md-6">
+            <input style="width:250px !important; height:50px !important" type="text" id="portfolio_stock_name" placeholder="Enter Stock Symbol: " class="form__field form__textarea stock_name"></textarea>
+            <input style="width:250px !important; height:50px !important" type="text" id="portfolio_stock_qty" placeholder="Enter stock quantity" class="form__field form__textarea stock_name"></textarea>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn--up-portfolio btn--width" id="portfolio_add_button" onclick="AddToPortfolio()" style="margin-top:100 !important">Add Stock</button>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <br>
+          <br>
+        </div>
+
+          <!------------------- DELETE STOCK------------------------->
+
+
+        <div class="col-md-12" style="height:70px !important">
+          <div class="col-md-6">
+            <input style="width:250px !important; height:50px !important" type="text" id="portfolio_stock_delete_name" placeholder="Stock Symbol to Delete" class="form__field form__textarea stock_name"></textarea>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn--up-portfolio-delete btn--width" id="portfolio_delete_button" style="margin-top:5px !important;" onClick="DeletefromPortfolio()">Delete Stock</button>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <br>
+          <br>
+        </div>
+
+        <!------------------- UPDATE STOCK------------------------->
+
+
+
+        <div class="col-md-12">
+          <div class="col-md-6">
+            <input style="width:250px !important; height:50px !important" type="text" id="portfolio_stock_update_name" placeholder="Enter Stock Symbol: " class="form__field form__textarea stock_name"></textarea>
+            <input style="width:250px !important; height:50px !important" type="text" id="portfolio_put_body" placeholder="Enter stock quantity" class="form__field form__textarea stock_name"></textarea>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn--up-portfolio btn--width" id="portfolio_put_button" style="margin-top:100 !important" onclick="PutfromPortfolio()">Update Stock</button>
+          </div>
+        </div>
+      </div>   
+    </div>
+  </div>
+</div>
+
+<!-- Next Section -->
+<div class="sect sect--padding-bottom" id="stock_area">
+  <div class="container">
+    <div class="row">
+     <h1 class="row__title">
+    Here are the results </h1>
+    </div>
+    <div class="row row--margin">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <label id="response-line1"></label>
+        <label id="response-line2"></label>
+      </div>   
+<div class="col-md-2"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Next section-->
+<div class="sect sect--padding-bottom">
+  <div class="container">
+    <div class="row">
+     <h1 class="row__title">
+    Contact Us </h1>
+  <h2 class="row__sub">Feel free to ask any questions</h2>
+    </div>
+    <div class="row row--margin">
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        <div class="contacts">
+          <a href="#" class="contacts__link"><img src="https://image.ibb.co/kcVou6/path3000.png"><h1 class="contacts_title-ag">Financex<span class="contacts--light">.io</span></h1></a>
+          <p class="contacts__address">
+            CSE, University of Notre Dame<br>
+            South Bend, Indiana<br>
+            United States
+          </p>
+          <p class="contacts__info">
+            tel. <a href="#" class="contacts__info-link">+1 574 631 999</a>
+          </p>
+          <p class="contacts__info">
+            m. <a href="#"class="contacts__info-link">info@financex.io</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <form id="contact" class="form">
+        
+           <div class="form-group">
+             <div class="form__field--half">
+            <input type="text" placeholder="Name*" class="form__field form__text"></input>
+             </div>
+          <div class="form__field--half">
+          <input type="text" placeholder="Surname" class="form__field form__text"></input>
+          </div>
+          </div>
+      
+        <div class="form-group">
+          <div class="form__field--half">
+            <input type="text" placeholder="Email address*" class="form__field form__text"></input>
+          </div>
+         <div class="form__field--half">
+          <input type="text" placeholder="Phone number" class="form__field form__text"></input>
+        </div>
+          </div>
+  
+          <div class="form-group">
+            <textarea type="text" placeholder="Your messsage*" class="form__field form__textarea"></textarea>
+            <button class="btn btn--up btn--width" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>   
+<div class="col-md-1"></div>
+    </div>
+  </div>
+</div>
+
+<div class="sect sect--violet ">
+  <img src="https://image.ibb.co/fWyVtb/path3762.png" class="career-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="career_title">Oh! Your have digged our website in search of getting rich quick.</h1>
+        <h1 class="career_sub">Don't trust us! For real.</h1>
+        <h1 class="career_sub">Still want to fall for this?</h1>
+        <a href="#" class="btn btn--white btn--width">Click here</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+       <img class="footer__img" src="https://image.ibb.co/kcVou6/path3000.png"> <h1 class="footer__title">Financex<span class="footer__light">.io</span></h1></div>
+    </div>
+  </div>
+</footer>
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
